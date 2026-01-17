@@ -1,8 +1,6 @@
 import { defineConfig } from 'astro/config';
-import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://www.signamind.com',
-  integrations: [sitemap()]
+  site: 'https://www.signamind.com'
 });
