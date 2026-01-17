@@ -39,19 +39,19 @@ const { title } = Astro.props
     <ViewTransitions />
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
-      {JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "SignaMind",
-        "url": "https://www.signamind.com",
-        "description": "Semantic data strategy for life sciences organizations",
-        "logo": "https://www.signamind.com/img/logo.png",
-        "contact": {
-          "@type": "ContactPoint",
-          "contactType": "Sales",
-          "email": "hello@signamind.com"
-        }
-      })}
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "SignaMind",
+      "url": "https://www.signamind.com",
+      "description": "Semantic data strategy for life sciences organizations",
+      "logo": "https://www.signamind.com/img/logo.png",
+      "contact": {
+        "@type": "ContactPoint",
+        "contactType": "Sales",
+        "email": "hello@signamind.com"
+      }
+    }
     </script>
 
     <!-- Google Tag Manager -->

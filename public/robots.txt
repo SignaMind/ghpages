@@ -1,5 +1,10 @@
+# Allow all robots to crawl this site
 User-agent: *
 Allow: /
-Disallow: /dist/
+
+# Block bad bots if needed (optional)
+User-agent: AhrefsBot
+User-agent: SemrushBot
+Disallow: /
 
 Sitemap: https://www.signamind.com/sitemap.xml
