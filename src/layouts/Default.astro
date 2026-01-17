@@ -19,7 +19,40 @@ const { title } = Astro.props
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="description" content="SignaMind: Semantic data strategy for life sciences. Bridge fragmented biology data with knowledge graphs and semantic architectures for AI readiness." />
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content={title || "SignaMind - Semantic Data Strategy for Life Sciences"} />
+    <meta property="og:description" content="SignaMind: Semantic data strategy for life sciences. Bridge fragmented biology data with knowledge graphs and semantic architectures for AI readiness." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.signamind.com" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80" />
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title || "SignaMind - Semantic Data Strategy for Life Sciences"} />
+    <meta name="twitter:description" content="SignaMind: Semantic data strategy for life sciences. Bridge fragmented biology data with knowledge graphs." />
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.signamind.com" />
+    
     <ViewTransitions />
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "SignaMind",
+        "url": "https://www.signamind.com",
+        "description": "Semantic data strategy for life sciences organizations",
+        "logo": "https://www.signamind.com/img/logo.png",
+        "contact": {
+          "@type": "ContactPoint",
+          "contactType": "Sales",
+          "email": "hello@signamind.com"
+        }
+      })}
+    </script>
 
     <!-- Google Tag Manager -->
     <script>
