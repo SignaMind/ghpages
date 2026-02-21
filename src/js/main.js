@@ -21,6 +21,7 @@ Alpine.store("app", {
   },
   isDark: Alpine.$persist(false),
   isSidebarOpened: Alpine.$persist(false),
+  isSiderbarOpen: Alpine.$persist(false),
   isSidebarOpenedMobile: Alpine.$persist(false),
   activeSidebar: Alpine.$persist("dashboard"),
   activeSidebarMenu: Alpine.$persist(""),

@@ -30,6 +30,8 @@ Hero styles
   }
 
   .landing-caption {
+    margin-top: 2rem;
+
     .button {
       min-width: 130px;
     }
@@ -39,6 +41,32 @@ Hero styles
     display: block;
     max-width: 520px;
     margin: 0 auto;
+  }
+
+  /* Full-bleed hero image (specific to singapore image on index page) */
+  .hero-image--full {
+    display: block;
+    width: 100vw;
+    max-width: none;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    /* Limit visual height so hero doesn't dominate on short screens */
+    max-height: 60vh;
+  }
+
+  @media (max-width: 1024px) {
+    .hero-image--full {
+      max-height: 50vh;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .hero-image--full {
+      max-height: 36vh;
+    }
   }
 }
 
@@ -93,13 +121,22 @@ Hero styles
     align-items: center;
     justify-content: center;
     width: 100%;
-    position: relative;
+    position: sticky;
+    top: 0;
     z-index: 2;
   }
 
-  &.is-collapsed {
-    height: 55vh;
+  .content-panel .logo-panel {
+    position: relative;
+    height: auto;
+  }
 
+  .content-panel img {
+    position: sticky;
+    top: 2rem;
+  }
+
+  &.is-collapsed {
     /* fully remove the centered SVG */
     .logo-panel {
       transform: translateY(-120%) scale(0.9);
@@ -114,9 +151,14 @@ Hero styles
       max-height: 0;
     }
 
+    /* reveal more of the next section by reducing hero height */
+    height: 45vh;
+    margin-bottom: 3rem;
+
     .content-panel {
       opacity: 1;
       transform: translateY(0);
+      padding-bottom: 10rem;
     }
   }
 }

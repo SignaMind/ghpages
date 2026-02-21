@@ -1,10 +1,13 @@
-<div x-data="initSidebar()" class="sidebar" :class=`{
-  'is-active': $store.app.isSiderbarOpen,
-  '': !$store.app.isSiderbarOpen
-}`>
+<div x-data="{}" x-effect="document.body.style.overflow = $store.app.isSiderbarOpen ? 'hidden' : ''" x-on:keydown.window="$event.key === 'Escape' && ($store.app.isSiderbarOpen = false)">
+  <div x-show.transition.opacity="$store.app.isSiderbarOpen" class="sidebar-backdrop" @click="$store.app.isSiderbarOpen = false" x-cloak aria-hidden="true"></div>
+
+  <div x-data="initSidebar()" class="sidebar" :class=`{
+    'is-active': $store.app.isSiderbarOpen,
+    '': !$store.app.isSiderbarOpen
+  }` x-cloak>
   <div class="sidebar-header">
     <img src="/img/logo/fresh-square.svg" />
-    <a @click="closeSidebar()" class="sidebar-close" href="javascript:void(0);"><iconify-icon class="iconify" icon="lucide:x"></iconify-icon> </a>
+    <a @click="closeSidebar()" class="sidebar-close" href="javascript:void(0);" role="button" aria-label="Close sidebar" tabindex="0" @keydown.enter.prevent="closeSidebar()" @keydown.space.prevent="closeSidebar()"><iconify-icon class="iconify" icon="lucide:x"></iconify-icon> </a>
   </div>
   <div class="inner">
     <ul class="sidebar-menu">

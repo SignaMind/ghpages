@@ -15,6 +15,14 @@
       <a href="#" class="navbar-item" onclick="event.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' });">
         <img src="/img/logo/signamind-top.png" alt="SignaMind" />
       </a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" @click="openMobileMenu()" :class={`{
+        'is-active': mobileOpen,
+        '': !mobileOpen
+      }`}>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
     </div>
 
     <div id="cloned-navbar-menu" class="navbar-menu is-fixed" :class=`{

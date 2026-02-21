@@ -3,8 +3,14 @@ Responsive Styles
 ========================================================================== */
 
 @media (max-width: 767px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
   .landing-caption {
     text-align: center;
+
+    margin-top: 1rem;
   }
 
   .navbar {
@@ -14,6 +20,22 @@ Responsive Styles
         align-items: center;
         justify-content: center;
       }
+    }
+  }
+
+  /* Ensure mobile navbar menu toggles correctly */
+  .navbar-menu {
+    display: none;
+
+    &.is-active {
+      display: block;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: $white;
+      z-index: 50;
+      padding: 1rem 0;
     }
   }
 

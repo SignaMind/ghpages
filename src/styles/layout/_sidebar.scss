@@ -83,6 +83,30 @@ Sidebar Styles
   }
 }
 
+/* Mobile adjustments: make sidebar overlay fullscreen and add backdrop support */
+@media (max-width: 767px) {
+  .sidebar {
+    width: 100%;
+    max-width: 100%;
+    transform: translateX(-100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10002;
+    &.is-active {
+      transform: translateX(0);
+    }
+  }
+
+  .sidebar-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 10001;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
 //Sidebar
 .sidebar {
   background: $dark-grey;
@@ -92,8 +116,8 @@ Sidebar Styles
   top: 0;
   left: 0;
   transform: translateX(-281px);
-  transition: all 0.3s;
-  z-index: 10000;
+  transition: all 0.25s ease-in-out;
+  z-index: 10002;
   overflow-y: auto;
 
   &.is-active {

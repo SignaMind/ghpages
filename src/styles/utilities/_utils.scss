@@ -2,6 +2,17 @@ body {
   overflow-x: hidden;
 }
 
+/* Ensure media elements scale down on small viewports */
+img,
+picture,
+svg,
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 .material-icons {
   font-family: 'Material Icons', sans-serif;
 }
