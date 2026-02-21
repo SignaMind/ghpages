@@ -6,29 +6,33 @@ const title = 'Semantic Foundations for AI in Life Sciences'
 ---
 
 <Layout title={title}>
-  <section class="hero is-fullheight is-grey">
-    <Navbar />
+  <section id="hero-reveal" class="hero hero-reveal is-grey">
+    <div class="hero-panel">
+      <Navbar />
+      <NavbarClone />
 
-    <NavbarClone />
+      <div class="logo-panel">
+        <img src="/img/logo/signamind-main.svg" class="reveal-logo" alt="SignaMind" />
+      </div>
 
-    <div class="hero-body">
-      <div class="container">
-        <div class="columns is-vcentered">
-          <div class="column is-5 landing-caption">
-            <h1 class="title is-1 is-bold is-spaced">Semantic Foundations for AI in Life Sciences</h1>
-            <h2 class="subtitle is-5 is-muted">Bridge siloed biology data and business systems with semantic technologies that unlock AI readiness</h2>
-            <div>
-              <a href="#contact" class="button cta primary-btn raised mr-2"> Schedule a Consultation </a>
-              <a href="#solution" class="button cta"> Learn More</a>
+      <div class="content-panel hero-body">
+        <div class="container">
+          <div class="columns is-vcentered">
+            <div class="column is-5 landing-caption">
+              <h1 class="title is-1 is-bold is-spaced">Semantic Foundations for AI in Life Sciences</h1>
+              <h2 class="subtitle is-5 is-muted">Bridge siloed biology data and business systems with semantic technologies that unlock AI readiness</h2>
+              <div>
+                <a href="#contact" class="button cta primary-btn raised mr-2"> Schedule a Consultation </a>
+                <a href="#solution" class="button cta"> Learn More</a>
+              </div>
             </div>
-          </div>
-          <div class="column is-7">
-            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80" class="hero-image" alt="Semantic data architecture and knowledge graphs for life sciences AI" style="border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);" />
+            <div class="column is-7">
+              <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80" class="hero-image" alt="Semantic data architecture and knowledge graphs for life sciences AI" style="border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);" />
+            </div>
           </div>
         </div>
       </div>
     </div>
-
   </section>
 
   <section id="solution" class="section is-medium">

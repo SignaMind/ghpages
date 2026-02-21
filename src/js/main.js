@@ -39,3 +39,22 @@ document.onreadystatechange = function () {
     const changeBackgrounds = insertBgImages();
   }
 };
+
+// Hero reveal: collapse hero on scroll to reveal content
+(() => {
+  const hero = document.getElementById('hero-reveal');
+  if (!hero) return;
+
+  const onScroll = () => {
+    const trigger = 60; // px scrolled before collapsing
+    if (window.scrollY > trigger) {
+      hero.classList.add('is-collapsed');
+    } else {
+      hero.classList.remove('is-collapsed');
+    }
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  // run once on load
+  onScroll();
+})();
