@@ -114,6 +114,15 @@ h6 {
   }
 }
 
+// Schedule a Consultation – expand container to show full form without internal scroll
+#contact {
+  .content-wrapper {
+    iframe {
+      height: 800px;
+    }
+  }
+}
+
 .side-image {
   max-width: 480px;
   margin: 0 auto;
