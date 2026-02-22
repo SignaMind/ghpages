@@ -100,10 +100,17 @@ h6 {
   padding: 60px 0;
 }
 
-//Side feqtures
+//Side features
 .side-feature {
   h3 {
     padding-bottom: 16px;
+  }
+}
+
+// On tablet+, reverse visual order so text appears left, image right
+.side-feature-text-first {
+  @media (min-width: 769px) {
+    flex-direction: row-reverse;
   }
 }
 
