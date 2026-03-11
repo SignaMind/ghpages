@@ -68,7 +68,7 @@ h6 {
 
 //Titles
 .title-wrapper {
-  max-width: 500px;
+  max-width: 700px;
   margin: 0 auto;
 
   .title,
@@ -89,9 +89,10 @@ h6 {
   border-radius: 50px;
   background: $secondary;
   width: 60px;
+  margin-top: 1rem;
 
   &.is-centered {
-    margin: 0 auto;
+    margin: 1rem auto 0;
   }
 }
 
@@ -269,6 +270,80 @@ h6 {
 
     .button {
       min-height: 46px;
+    }
+  }
+}
+
+// Publications accordion
+#publications {
+  .box {
+    background-color: #f8f9fa;
+    border: 1px solid #e8e8e8;
+    padding: 0;
+  }
+
+  details {
+    cursor: pointer;
+
+    summary {
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 1rem 1.25rem;
+      user-select: none;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &::-webkit-details-marker {
+        display: none;
+      }
+
+      .summary-arrow {
+        transition: transform 0.25s ease;
+        display: inline-block;
+      }
+    }
+
+    &[open] summary .summary-arrow {
+      transform: rotate(180deg);
+    }
+
+    .publications-list {
+      padding: 1.5rem 1.25rem;
+      border-top: 1px solid #e8e8e8;
+      list-style: none;
+      margin: 0;
+
+      li {
+        padding-bottom: 1.5rem;
+        margin-bottom: 1.5rem;
+        border-bottom: 1px solid #e8e8e8;
+
+        &:last-child {
+          margin-bottom: 0;
+          padding-bottom: 0;
+          border-bottom: none;
+        }
+      }
+
+      a {
+        color: $primary;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s;
+
+        &:hover {
+          color: darken($primary, 15%);
+          text-decoration: underline;
+        }
+      }
+
+      p {
+        margin: 0.4rem 0 0;
+        color: $muted-grey;
+        font-size: 0.875rem;
+      }
     }
   }
 }
