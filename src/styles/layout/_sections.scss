@@ -160,6 +160,22 @@ h6 {
   padding-top: 2rem;
 }
 
+// Gradient text utility
+.gradient-text {
+  background: linear-gradient(135deg, $blue-grey 0%, $primary 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// Op-stance columns – elevated card surface
+.op-stance-column {
+  background: $white;
+  border-radius: 16px;
+  padding: 2.5rem !important;
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.07);
+}
+
 // On tablet+, reverse visual order so text appears left, image right
 .side-feature-text-first {
   @media (min-width: 769px) {
@@ -188,41 +204,48 @@ h6 {
 
   &:hover {
     .icon-wrap {
-      transform: translateY(-5px);
-      box-shadow: $light-shadow;
+      transform: translateY(-8px) scale(1.1);
+      box-shadow: 0 16px 32px rgba($primary, 0.4);
 
       .iconify {
-        color: $secondary;
+        color: $white;
+        transform: rotate(8deg);
       }
     }
   }
 
   .icon-wrap {
-    height: 60px;
-    width: 60px;
+    height: 70px;
+    width: 70px;
     border-radius: 50%;
-    border: 1px solid darken($fade-grey, 4%);
+    border: none;
+    background: linear-gradient(135deg, $primary 0%, darken($primary, 16%) 100%);
+    box-shadow: 0 8px 20px rgba($primary, 0.3);
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto 10px auto;
-    transition: all 0.3s;
+    margin: 0 auto 14px auto;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 
     .iconify {
       font-size: 2rem;
-      color: lighten($blue-grey, 18%);
-      transition: all 0.3s;
+      color: $white;
+      transition: all 0.3s ease;
     }
   }
 
   h4 {
-    font-family: $font;
-    font-weight: 600;
+    font-family: $font-heading;
+    font-weight: 700;
     color: $blue-grey;
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
   }
 
   p {
     color: $muted-grey;
+    font-size: 0.9rem;
+    line-height: 1.6;
   }
 }
 
@@ -297,9 +320,12 @@ h6 {
 // Publications accordion
 #publications {
   .box {
-    background-color: #f8f9fa;
-    border: 1px solid #e8e8e8;
+    background-color: $white;
+    border: 1px solid darken($fade-grey, 4%);
     padding: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
   }
 
   details {
@@ -308,12 +334,19 @@ h6 {
     summary {
       font-weight: 600;
       font-size: 1.1rem;
-      padding: 1rem 1.25rem;
+      padding: 1.1rem 1.5rem;
       user-select: none;
       list-style: none;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      background: linear-gradient(135deg, $blue-grey 0%, lighten($blue-grey, 8%) 100%);
+      color: $white;
+      letter-spacing: 0.01em;
+
+      strong {
+        color: $white;
+      }
 
       &::-webkit-details-marker {
         display: none;
@@ -322,6 +355,7 @@ h6 {
       .summary-arrow {
         transition: transform 0.25s ease;
         display: inline-block;
+        color: rgba($white, 0.75);
       }
     }
 

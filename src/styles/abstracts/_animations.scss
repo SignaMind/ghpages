@@ -107,6 +107,25 @@ General Keyframes animations
   }
 }
 
+// Shimmer sweep (button hover)
+@keyframes shimmer {
+  0%   { transform: translateX(-100%) skewX(-15deg); }
+  100% { transform: translateX(250%)  skewX(-15deg); }
+}
+
+// Animated gradient position shift (divider, footer accent)
+@keyframes gradient-shift {
+  0%   { background-position: 0%   50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0%   50%; }
+}
+
+// Gentle float (decorative blobs)
+@keyframes float {
+  0%, 100% { transform: translateY(0px)   scale(1); }
+  50%       { transform: translateY(-18px) scale(1.03); }
+}
+
 // Stagger delays for sibling cards / icons
 .column:nth-child(2) .is-feature-reveal,
 .column:nth-child(2) .is-icon-reveal {

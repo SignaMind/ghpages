@@ -14,31 +14,71 @@ Cards and Card content styles
 .feature-card {
   width: 100%;
   background-color: #fff;
-  border-radius: 6px;
+  border-radius: 12px;
   margin: 0 auto;
   padding: 2.5rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.35s cubic-bezier(0.34, 1.2, 0.64, 1), box-shadow 0.35s ease;
   display: flex;
   flex-direction: column;
+  position: relative;
+  overflow: hidden;
+
+  // Gradient accent line that slides in from left on hover
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, $primary, lighten($primary, 22%));
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.35s ease;
+    border-radius: 12px 12px 0 0;
+  }
 
   &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba($primary, 0.12), 0 8px 16px rgba(0, 0, 0, 0.06);
+
+    &::before {
+      transform: scaleX(1);
+    }
   }
 
   .card-title h4 {
     font-family: $font-heading;
     font-size: 1.2rem;
-    font-weight: 600;
+    font-weight: 700;
     color: $blue-grey;
+    letter-spacing: -0.01em;
   }
 
   .card-icon {
+    position: relative;
+
+    // Soft glow circle behind the icon
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba($primary, 0.1) 0%, rgba($primary, 0.04) 70%);
+      transition: all 0.35s ease;
+    }
+
     img {
       display: block;
       height: 80px;
       width: 80px;
       margin: 20px auto;
+      position: relative;
+      z-index: 1;
     }
 
     iconify-icon {
@@ -46,7 +86,14 @@ Cards and Card content styles
       font-size: 3rem;
       color: $primary;
       margin: 20px auto;
+      position: relative;
+      z-index: 1;
     }
+  }
+
+  &:hover .card-icon::before {
+    transform: translate(-50%, -50%) scale(1.2);
+    background: radial-gradient(circle, rgba($primary, 0.16) 0%, rgba($primary, 0.04) 70%);
   }
 
   .card-text {
@@ -56,6 +103,7 @@ Cards and Card content styles
 
     p {
       color: $muted-grey;
+      line-height: 1.65;
     }
   }
 
@@ -69,7 +117,7 @@ Cards and Card content styles
   }
 
   &.is-bordered {
-    border: 1px solid $fade-grey;
+    border: 1px solid darken($fade-grey, 2%);
   }
 }
 
