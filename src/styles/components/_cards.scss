@@ -14,9 +14,15 @@ Cards and Card content styles
 .feature-card {
   width: 100%;
   background-color: #fff;
-  border-radius: 3px;
+  border-radius: 6px;
   margin: 0 auto;
   padding: 2.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  }
 
   .card-title h4 {
     font-family: $font-heading;
@@ -35,7 +41,7 @@ Cards and Card content styles
   }
 
   .card-text {
-    max-width: 210px;
+    max-width: 280px;
     margin: 0 auto;
 
     p {

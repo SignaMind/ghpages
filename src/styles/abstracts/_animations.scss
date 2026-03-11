@@ -91,6 +91,33 @@ General Keyframes animations
     -webkit-animation-name: fadeInUp;
 }
 
+// Scroll-reveal helpers
+// Elements start invisible; JS adds .is-visible once they enter the viewport
+
+.is-feature-reveal,
+.is-title-reveal,
+.is-icon-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Stagger delays for sibling cards / icons
+.column:nth-child(2) .is-feature-reveal,
+.column:nth-child(2) .is-icon-reveal {
+  transition-delay: 0.1s;
+}
+
+.column:nth-child(3) .is-feature-reveal,
+.column:nth-child(3) .is-icon-reveal {
+  transition-delay: 0.2s;
+}
+
 //Gelatine
 .gelatine {
     animation: gelatine 0.6s;

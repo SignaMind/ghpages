@@ -41,6 +41,26 @@ document.onreadystatechange = function () {
   }
 };
 
+// Scroll-reveal: fade in elements as they enter the viewport
+(() => {
+  const revealEls = document.querySelectorAll('.is-feature-reveal, .is-title-reveal, .is-icon-reveal');
+  if (!revealEls.length) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  revealEls.forEach((el) => observer.observe(el));
+})();
+
 // Hero reveal: collapse hero on scroll to reveal content
 (() => {
   const hero = document.getElementById('hero-reveal');

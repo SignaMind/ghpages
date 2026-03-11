@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   overflow-x: hidden;
 }
@@ -115,8 +119,16 @@ iframe {
   color: $white !important;
 }
 
+.mb-10 {
+  margin-bottom: 10px;
+}
+
 .mb-20 {
   margin-bottom: 20px;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
 }
 
 .mb-40 {
