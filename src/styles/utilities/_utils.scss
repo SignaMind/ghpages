@@ -6,6 +6,20 @@ body {
   overflow-x: hidden;
 }
 
+// Knowledge-graph canvas – fixed full-page background
+#kg-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  display: block;
+  cursor: default;
+  transition: opacity 0.5s ease;
+}
+
 /* Ensure media elements scale down on small viewports */
 img,
 picture,
