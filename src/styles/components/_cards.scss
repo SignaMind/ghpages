@@ -34,11 +34,17 @@ Cards and Card content styles
   }
 
   .card-icon {
-    img,
-    iconify-icon {
+    img {
       display: block;
       height: 80px;
       width: 80px;
+      margin: 20px auto;
+    }
+
+    iconify-icon {
+      display: block;
+      font-size: 3rem;
+      color: $primary;
       margin: 20px auto;
     }
   }
